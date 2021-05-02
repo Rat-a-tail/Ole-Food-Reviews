@@ -16,4 +16,13 @@ UserArray.o:	UserArray.cpp	UserArray.h
 UserArrayDriver.o:	UserArrayDriver.cpp	UserArray.h
 	g++ -g -Wall -c UserArrayDriver.cpp
 
+Meal_Array.o:  Meal_Array.cpp Meal_Array.h 
+	g++ -g -Wall -c Meal_Array.cpp
+
+Meal_Array_Driver.o:  Meal_Array_Driver.cpp Meal_Array.h 
+	g++ -g -Wall -c Meal_Array_Driver.cpp
+
+Meal_Array_Driver:  Meal_Array.o Meal_Array_Driver.o 
+	g++ -g -Wall -o Meal_Array_Driver Meal_Array.o Meal_Array_Driver.o 
+
 
