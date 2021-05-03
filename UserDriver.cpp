@@ -1,8 +1,8 @@
-#include <iostream>
 #include "User.h"
 
 int main(){
-//    UserArrayP sto();
+    User prac();
     User celia("celia", "green");
     celia.display();
+    prac.display();
 }
