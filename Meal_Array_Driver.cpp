@@ -1,43 +1,81 @@
 #include <iostream>
 using namespace std;
+#include <string>
+#include <string.h>
 #include "Meal_Array.h"
 
 int main() {
-    cerr << "*** Driver program for Meal_Array class ***" << endl;
-    Meal_Array M1("Fried Chicken ");
-M1.display();
+    Meal* arr;
+    arr = new Meal[2]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
+     // might need a method(add) to do the thing above.--> station.
 
-Grill G1(3, "Panini");
-G1.display();
+    //Soup station
+    Meal a("Yoda's prok and Lentil Soup" , 1);
+    Meal b("Jar Jar Binks California Meldley", 4);
+    //Home station
+    Meal c("Tautaun (Beef) Red Wine Braised Pot Roast", 5);
+    Meal d(" Carbonite Roasted Spicy Potatoes", 0.2);
+    Meal e ("Jakku Noodles", 2);
+    // Tortilla station
+    Meal f("Sofrito Pinto Beans",3);
+    Meal g("Chipotle Black Beans",3);
+    Meal h("Achiote chicken Pinto Tinga",0);
+    Meal i("Arroz Amarillo",1);
 
-Soup S1(4, "Soup");
-S1.display();
+    //Pizza station
+    Meal j("Wampa Sausage and Swiss Chard Pizza",3);
+    Meal k("Rancor Pepperoni Pizza with Hastings Dairy", 5);
+    Meal l("Five Cheese Pizza",2);
+    // Pasta station
+    Meal m("Pasta",0);
+    Meal n("Roasted Chicken",2);
+    Meal o("Roasted Local Vegetables",4);
+    Meal p("Sauce Marinara",1);
+    Meal q("Garlic Peppercorn Sauce",2);
 
-Pasta P1(4, "Pasta");
-P1.display();
+    delete [] arr;
 
-Pizza PP1(4, "Pizza");
-PP1.display();
+    station Soup;
+    Soup.add_meal(a);
+    Soup.add_meal(b);
+    //Soup.display();
 
-Bowl B1(4, "Bowl");
-B1.display();
+    station Home;
+    Home.add_meal(c);
+    Home.add_meal(d);
+    Home.add_meal(e);
+    //Home.display();
 
-Deserts D1(4, "Cake");
-D1.display();
+    station Tortilla;
+    Tortilla.add_meal(f);
+    Tortilla.add_meal(g);
+    Tortilla.add_meal(h);
+    Tortilla.add_meal(i);
+    //Tortilla.display();
 
-Home H1(4, "Home");
-H1.display();
-
-Tortilla T1(4, "Tortilla");
-T1.display();
-
-Grains G2(4, "Grains");
-G2.display();
-
-Salad S2(4, "Salads");
-S2.display();
-
-
-
+    station Pasta;
+    Tortilla.add_meal(m);
+    Tortilla.add_meal(n);
+    Tortilla.add_meal(o);
+    Tortilla.add_meal(p);
+    Tortilla.add_meal(q);
+    //Tortilla.display();
+    Soup.retrieve_information();
+    Home.retrieve_information();
+    Pasta.retrieve_information();
+    Tortilla.retrieve_information();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
