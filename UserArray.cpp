@@ -30,18 +30,6 @@ int UserArrayP::getlenarray(const char *word){
         return len;
     }
 
-/*
-	ofstream f(filename);
-	for (int i = 0; i < userlstlen; ++i){
-		f<<i<<"."<<endl;
-        f<< "Username: " << *User[i].get_Username(); << endl;
-        f<< "Password: " << *User[i].get_Password(); << endl;
-        f<<endl;
-	}
-	f.close();
-}
-*/
-
 void UserArrayP::display(){
     cout<<"userlstlen: "<< userlstlen <<endl;
     for (int i = 0; i < userlstlen; i++){
@@ -115,7 +103,7 @@ void UserArrayP::store_global(int offset){
         _put_raw(offset, &copy);
     }
 }
-
+/*
 void UserArrayP::get_from_global(int offset){
 	userlstlen = _get_short(0);
 	for(int i = 0; i < userlstlen; i++){
@@ -125,6 +113,7 @@ void UserArrayP::get_from_global(int offset){
 	}
 
 }
+
 
 void UserArrayP::print_to_file(const char *filename) const{
 	ofstream f(filename);
