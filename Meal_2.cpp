@@ -104,7 +104,7 @@ void retrieve_information(){
     string output;  
         cout << input << endl;
         cin >>  output; 
-        if(output == "done"){ // use strcmp in context with nothing else....
+        if(output == "end"){ // use strcmp in context with nothing else....
             break;
         } else {
            int i;
