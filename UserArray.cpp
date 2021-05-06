@@ -93,19 +93,22 @@ bool UserArrayP::checking(const char *user, const char *pass){
     }
 }
 
+// Global mem starts with userlstlen at 5
+//starting at 100 there will be a User every 100 bytes of global mem
+//username at 100 *i and password at (100*i)+50
 
-/*
 void UserArrayP::store_global(int offset){
-    _put_short(0, userlstlen);
+    _put_short(5, userlstlen);
     for (int i = 0; i < userlstlen; i++) {
-        User *copy = new User;
-        copy = userlist[i];
-        _put_raw(offset, &copy);
+        char *useru = userlist[i]->getuser();
+        char *passu = userlist[i]->getpass();
+        _put_raw(100*i, useru);
+        _put_raw((100*i)+50, passu);
     }
 }
 /*
 void UserArrayP::get_from_global(int offset){
-	userlstlen = _get_short(0);
+	userlstlen = _get_short(5);
 	for(int i = 0; i < userlstlen; i++){
         User *copy = new User;
         copy = userlist[i];
@@ -113,7 +116,6 @@ void UserArrayP::get_from_global(int offset){
 	}
 
 }
-
 
 void UserArrayP::print_to_file(const char *filename) const{
 	ofstream f(filename);
