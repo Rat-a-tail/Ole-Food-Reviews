@@ -90,18 +90,12 @@ class station{
             delete [] temp;
             num_meals +=1;
             meal_array[num_meals-1] = d; /// 
-            
-            
-
         }
     }
+
 bool compare(int i, string output){
     bool A = (strcmp(meal_array[i].getname(), output.c_str()) == 0);
-    cout << meal_array[i].getname() << endl;
-    //cout << output.c_str() << endl;
-    //cout << A<< endl; // incorretc 
  return A;
- 
 }
 
 void retrieve_information(){
@@ -115,10 +109,10 @@ void retrieve_information(){
         } else {
            int i;
             for(i =0; i < num_meals; i++){
-                cout << num_meals <<  " here" << endl;
+                //cout << num_meals <<  " here" << endl;
                 if (compare(i, output)){ // ask prof olaf about this line.
                     //cout << "are you here" << endl;
-                    cout << "You selected:   "<< output << "with a meal rating of "<<  meal_array[i].getrating() << endl;
+                    cout << "You selected: "<< output << " with a meal rating of "<<  meal_array[i].getrating() << "." << endl;
                     break;
                 } 
             } 
@@ -180,7 +174,7 @@ station &operator=(const station &f){
 
 int main() {
     Meal* arr;
-    arr = new Meal[2]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
+    arr = new Meal[20]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
      // might need a method(add) to do the thing above.--> station.
 //arr[0] = m; 
     //m.display();
@@ -227,30 +221,30 @@ int main() {
     Soup.add_meal(b);
     //Soup.display();
 
-    station Home;
-    Home.add_meal(c);
-    Home.add_meal(d);
-    Home.add_meal(e);
+    //station Home;
+    Soup.add_meal(c);
+    Soup.add_meal(d);
+    Soup.add_meal(e);
     //Home.display();
 
-    station Tortilla;
-    Tortilla.add_meal(f);
-    Tortilla.add_meal(g);
-    Tortilla.add_meal(h);
-    Tortilla.add_meal(i);
+    //station Tortilla;
+    Soup.add_meal(f);
+    Soup.add_meal(g);
+    Soup.add_meal(h);
+    Soup.add_meal(i);
     //Tortilla.display();
 
-    station Pasta;
-    Tortilla.add_meal(m);
-    Tortilla.add_meal(n);
-    Tortilla.add_meal(o);
-    Tortilla.add_meal(p);
-    Tortilla.add_meal(q);
+    //station Pasta;
+    Soup.add_meal(m);
+    Soup.add_meal(n);
+    Soup.add_meal(o);
+    Soup.add_meal(p);
+    Soup.add_meal(q);
     //Tortilla.display();
     Soup.retrieve_information();
-    Home.retrieve_information();
+    /*Soup.retrieve_information();
     Pasta.retrieve_information();
-    Tortilla.retrieve_information();
+    Tortilla.retrieve_information();*/
 }
 
 
