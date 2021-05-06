@@ -22,6 +22,8 @@ public:
     void changepass(const char *npass); //change the password
     void changeuser(const char *nuser); //change the username (not sure if we really need this one)
     void display(); //display Username and password;
+    char *getuser();
+    char *getpass();
 
 
 };
