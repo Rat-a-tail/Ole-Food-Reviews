@@ -1,7 +1,7 @@
 #include "User.h"
 
 int main(){
-    User prac();
+    User prac;
     User celia("celia", "green");
     celia.display();
     prac.display();

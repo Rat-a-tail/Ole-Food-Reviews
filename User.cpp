@@ -117,6 +117,13 @@ void User::changeuser(const char *nuser){
         }
 
     }
+char *User::getuser(){
+    return username;
+}
+
+char *User::getpass(){
+    return password;
+}
 
 void User::display(){
         cerr << "Username: " << username <<endl;
