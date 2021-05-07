@@ -1,5 +1,6 @@
 #include <iostream>
 #include "User.h"
+#include "../react.h"
 
 class UserArrayP{
     int userlstlen;
@@ -12,11 +13,14 @@ public:
 
 //Methods
     void Program();
+    bool checking(const char *user, const char *pass);
     void addUser(const User &h);
     int getlenarray(const char *word);
     void print_to_file();
     void display();
     void destroy(User **n);
-    //void print_to_file(const char *filename)const;
+    void store_global(int offset);
+    void get_from_global(int offset);
+    void print_to_file(const char *filename)const;
 
 };

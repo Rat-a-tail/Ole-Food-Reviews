@@ -6,17 +6,13 @@ using namespace std;
 int main(){
     UserArrayP sto;
     User celia("celia", "purple");
-    User poc;
-    poc = celia;
-    poc.display();
-    celia.display();
+    User pol("poll", "magenta");
     User maker;
-    maker.display();
     sto.addUser(maker);
     sto.addUser(celia);
-    sto.addUser(poc);
-    sto.display();
-    sto.display();
+    sto.addUser(pol);
+    //sto.display();
+    cout <<sto.checking("celia", "purple") << endl;
     /*
     bool cont = 1;
     while(cont){

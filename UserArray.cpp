@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 #include "UserArray.h"
 #include "User.cpp"
  
@@ -22,12 +23,6 @@ void UserArrayP::addUser(const User &h){
         userlist[userlstlen] = copy;
         userlstlen+=1;
     }
-    
-void UserArrayP::Program(){
-    std::cout << "Are you a new User? Y/N" <<std::endl;
-    char answer1;
-    std::cin >> answer1;
-}    
 
 int UserArrayP::getlenarray(const char *word){
         int len = 0;
@@ -35,30 +30,99 @@ int UserArrayP::getlenarray(const char *word){
         return len;
     }
 
-/*
-	ofstream f(filename);
-	for (int i = 0; i < userlstlen; ++i){
-		f<<i<<"."<<endl;
-        f<< "Username: " << *User[i].get_Username(); << endl;
-        f<< "Password: " << *User[i].get_Password(); << endl;
-        f<<endl;
-	}
-	f.close();
-}
-*/
-
 void UserArrayP::display(){
     cout<<"userlstlen: "<< userlstlen <<endl;
     for (int i = 0; i < userlstlen; i++){
-        
+       
         std::cout << "\tEntry: " << i<<std::endl; 
         userlist[i]->display();
     }
 }
-
 
 void UserArrayP::destroy(User **n){
         for (int i = 0; i < userlstlen; i++){
             delete n[i];
         }
     }
+
+
+bool UserArrayP::checking(const char *user, const char *pass){
+
+    int i = 0;
+    int foundvalue;
+    bool found =0 ;
+    while ( i < userlstlen && found == 0){
+        bool check = 1;
+        int k = 0;
+        while (check != 0 && k < getlenarray(user)){
+            char *userfl = userlist[i]->getuser();
+            if (user[k] != userfl[k]){
+                check = 0;
+            }
+            if (k == getlenarray(user)-1){
+                found = 1;
+                foundvalue = i;
+            }
+            k++;
+
+        }
+        i++;
+    }
+    if (found == 0){
+        return 0;
+
+    }
+
+    bool match = 1;
+    char *passfl = userlist[foundvalue]->getpass();
+    int c = 0;
+        while (c < getlenarray(pass) && match == 1){
+            if (pass[c] == passfl[c]){
+                match = 1;
+            }
+            else {
+                match = 0;
+            }
+            c++;
+        }
+    if (c == getlenarray(pass)){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+// Global mem starts with userlstlen at 5
+//starting at 100 there will be a User every 100 bytes of global mem
+//username at 100 *i and password at (100*i)+50
+
+void UserArrayP::store_global(int offset){
+    _put_short(5, userlstlen);
+    for (int i = 0; i < userlstlen; i++) {
+        char *useru = userlist[i]->getuser();
+        char *passu = userlist[i]->getpass();
+        _put_raw(100*i, useru);
+        _put_raw((100*i)+50, passu);
+    }
+}
+/*
+void UserArrayP::get_from_global(int offset){
+	userlstlen = _get_short(5);
+	for(int i = 0; i < userlstlen; i++){
+        User *copy = new User;
+        copy = userlist[i];
+        _put_raw(offset, copy);
+	}
+
+}
+
+void UserArrayP::print_to_file(const char *filename) const{
+	ofstream f(filename);
+	f<< userlstlen <<endl;
+	for (int i = 0; i < userlstlen; ++i){
+		f<< i << " " << *User[i]->display() << endl;
+	}
+	f.close();
+}
+*/
