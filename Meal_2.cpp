@@ -111,14 +111,14 @@ void retrieve_information(){
             for(i =0; i < num_meals; i++){
                 //cout << num_meals <<  " here" << endl;
                 if (compare(i, output)){ // ask prof olaf about this line.
-                    //cout << "are you here" << endl;
+                    cout << i << endl;
                     cout << "You selected: "<< output << " with a meal rating of "<<  meal_array[i].getrating() << "." << endl;
                     break;
                 } 
             } 
             /*if (i == num_meals){
              cout << "Sorry, the meal rating cannot be found" << endl;
-            } */ 
+            }  */
         } // try erasing output but also try calling the function elsewhere, also consider creating anotehr variable...
         /*int i;
         for(i =0; i < num_meals; i++){
@@ -206,10 +206,10 @@ int main() {
     //Pizza station
     Meal j("Wampa Sausage and Swiss Chard Pizza",3);
     Meal k("Rancor Pepperoni Pizza with Hastings Dairy", 5);
-    Meal l("Five Cheese Pizza",2);
+    Meal l("Pizza",0);
     // Pasta station
-    Meal m("Pasta",0);
-    Meal n("Roasted Chicken",2);
+    Meal m("Roasted Chicken",0);
+    Meal n("Pasta",2);
     Meal o("Roasted Local Vegetables",4);
     Meal p("Sauce Marinara",1);
     Meal q("Garlic Peppercorn Sauce",2);
@@ -266,62 +266,3 @@ int main() {
 
 
 
-/*class Meal_Array{
-     char *station;
-public:
-Meal_Array(const char *M_N) { // constructor
-        int len = 0; 
-        for (int j = 0; M_N[j] !=0; ++j ){
-            len = j;
-        }
-        station_name = new char[len+1];
-        for(int i = 0; i < len+1; ++i) {
-        station_name[i] = M_N[i];
-        }
-}
- void display() {
-  std::cerr  << "You selected " << ": " << station_name <<  " station" << std::endl;
-}
-
-const char *getstation_name() {
-    return station_name;
-}
-
-~Meal_Array (){
-    //std::cerr << "Segmentation fault not here" << std::endl;
-   // delete [] station_name;
-    
-}
-};
-
-class Grill : public Meal_Array{
-     char *meal_name; 
-    int student_rate; 
-
-    public:
-    Grill(int r, const char *sr) : Meal_Array(sr){
-    student_rate = r;
-        int len =0;
-        while(sr[len]!=0){
-        ++len;
-        }
-       sr = new char[len+1];
-       for ( int i = 0; i < len+1; ++i ) {
-        meal_name[i]= sr[i];
-        // having segmentation fault error after this line:
-         std::cerr << "Segmentation fault not here" << std::endl;
-        }
-    }
-
-void display() {
-    std::cerr  << "Rating is " << ":"<< student_rate  <<  " " << getstation_name() <<  " station "<<  std::endl;
-}
-~Grill(){
-   // delete [] meal_name;
-}
-};
-
-int main () {
-Grill G1(3, "Grill");
-G1.display();
-}*/
