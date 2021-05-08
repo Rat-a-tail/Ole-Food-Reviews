@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-#include "Review_Array.h"
+#include "ReviewArray.h"
+#include "Review.cpp"
+
 
 
 
