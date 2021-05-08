@@ -1,4 +1,5 @@
 #include<iostream>
+#include "Review_Array.h"
 using namespace std;
 
 int getlenstring(const char *word){
@@ -7,14 +8,7 @@ int getlenstring(const char *word){
     return len+1;
 }
 
-class Review {
-    int stars;
-    char *date;
-    char *username;
-    char *meal;
-
-public:
-    Review(int s, char *d, char *u, char *m) {
+Review:Review(int s, char *d, char *u, char *m) {
         //cerr << "Review constructor initialized" << endl;
         if (s < 1) {
             stars = 1;
@@ -42,7 +36,7 @@ public:
         }
     }
 
-    Review() {
+Review:Review() {
         //cerr << "Review default constructor initialized" << endl;
         stars = -1; //NOTE: When implementing this on React, we should make it so that if a star rating is -1, it displays a special message to the effect of "NO REVIEW" or something.
         date = new char[8];
@@ -67,7 +61,7 @@ public:
         meal[8] = 0;
     }
 
-    Review(const Review &input) {
+Review:Review(const Review &input) {
         //cerr << "Review copy constructor initialized" << endl;
         int datelen = getlenstring(input.date);
         int userlen = getlenstring(input.username);
@@ -87,7 +81,7 @@ public:
         }
     }
 
-    ~Review() {
+Review:~Review() {
         //cerr << "Review destructor initialzied" << endl;
         delete [] date;
         delete [] username;
@@ -122,41 +116,36 @@ public:
         }
     }
     void test_display() {cerr << get_stars() << " " << get_date() << " " << get_username() << " " << get_meal() << endl;}
-};
 
-class Review_Array {
-    int length;
-    Review *review_array;
-
-public:
-    Review_Array(int l) : length(l) {
+Review_Array:Review_Array(int l) {
+        length = l;
         //cerr << "Review_Array constructor initialized" << endl;
         review_array = new Review[length];
     }
 
-    Review_Array() {
+Review_Array:Review_Array() {
         //cerr << "Review_Array default constructor initialized" << endl;
         length = 0;
         review_array = new Review[length];
     }
 
-    ~Review_Array() {
+Review_Array:~Review_Array() {
         //cerr << "Review_Array destructor initialized" << endl;
         delete [] review_array;
     }
 
-    Review & operator[](int i) {
+Review_Array:Review & operator[](int i) {
         return review_array[i];
     }
 
-    void edit_entry(int i, Review newdata) {
+void Review_Array:edit_entry(int i, Review newdata) {
         review_array[i].set_stars(newdata.get_stars());
         review_array[i].set_date(newdata.get_date());
         review_array[i].set_username(newdata.get_username());
         review_array[i].set_meal(newdata.get_meal());
     }
 
-    void add_entry(Review latest) {
+void Review_Array:add_entry(Review latest) {
         int i = length;
         while (review_array[i - 1].get_stars() == -1) {
             cerr << i << endl;
@@ -165,13 +154,13 @@ public:
         edit_entry(i, latest);
     }
 
-    void delete_entry(int i) {
+void Review_Array:delete_entry(int i) {
         //replaces the contents at a particular index with the default values
         Review blank;
         edit_entry(i, blank);
     }
 
-    void test_display() {
+void Review_Array:test_display() {
         //displays the entire contents of the array
         for (int i = 0; i < length; ++i) {
             review_array[i].test_display();
@@ -179,21 +168,3 @@ public:
     }
 };
 
-int main() {
-    Review newreview(3, "12/12/12", "martin52", "pizza");
-    Review newreview2(2, "2/2/2", "tululu2", "tofu");
-    Review newreview3(5, "7/4/15", "hubert9", "olives");
-    Review_Array driver_test(10);
-    cerr << "An uninitialized review_array:" << endl;
-    driver_test.test_display();
-    cerr << "Editing entries:" << endl;
-    driver_test.edit_entry(0, newreview);
-    driver_test.edit_entry(5, newreview2);
-    driver_test.test_display();
-    cerr << "Adding entries to the end of the array:" << endl;
-    driver_test.add_entry(newreview3);
-    driver_test.test_display();
-    cerr << "Deleting entries:" << endl;
-    driver_test.delete_entry(5);
-    driver_test.test_display();
-}
