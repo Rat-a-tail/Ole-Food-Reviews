@@ -23,7 +23,20 @@ Meal_Array_Driver.o:  Meal_Array_Driver.cpp Meal_Array.h
 	g++ -g -Wall -c Meal_Array_Driver.cpp
 
 Meal_Array_Driver:  Meal_Array.o Meal_Array_Driver.o 
-	g++ -g -Wall -o Meal_Array_Driver Meal_Array.o Meal_Array_Driver.o 
+	g++ -g -Wall -o Meal_Array_Driver Meal_Array.o Meal_Array_Driver.o ../react.o -lcurl
+
+ReviewDriver:	ReviewArray.o	ReviewDriver.o
+	g++ -g -Wall -o ReviewDriver ReviewArray.o ReviewArrayDriver.o ../react.o -lcurl
+
+ReviewArray.o:	ReviewArray.cpp	ReviewArray.h
+	g++ -g -Wall -c ReviewArray.cpp
+
+ReviewDriver.o:	ReviewArray.cpp	ReviewArray.h
+	g++ -g -Wall -c Review.cpp
+
+Review.o:	Review.cpp	Review.h
+	g++ -g -Wall -c Review.cpp
+
 
 
 
