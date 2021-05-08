@@ -3,6 +3,7 @@
 #include <string>
 #include <string.h>
 using namespace std;
+#include "Meal_Array.h"
 
 // station class
 station::station(){
