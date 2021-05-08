@@ -37,6 +37,16 @@ ReviewDriver.o:	ReviewArray.cpp	ReviewArray.h
 Review.o:	Review.cpp	Review.h
 	g++ -g -Wall -c Review.cpp
 
+Station_Array.o:  Station_Array.cpp Station_Array.h 
+	g++ -g -Wall -c Station_Array.cpp
+
+Station_Array_Driver.o:  Station_Array_Driver.cpp Station_Array.h 
+	g++ -g -Wall -c Station_Array_Driver.cpp
+
+Station_Array_Driver:  Station_Array.o Station_Array_Driver.o 
+	g++ -g -Wall -o Station_Array_Driver Station_Array.o Station_Array_Driver.o ../react.o -lcurl
+
+
 
 
 
