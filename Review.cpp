@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+#include "Review.h"
+
 
 
 int getlenstring(const char *word){

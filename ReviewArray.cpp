@@ -1,7 +1,7 @@
-#ifndef _ReviewArray_H_
-#define _ReviewArray_H_
-#include<iostream>
+#include <iostream>
 using namespace std;
+#include "Review_Array.h"
+
 
 
 Review_Array::Review_Array(int l) : length(l) {
