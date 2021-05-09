@@ -2,8 +2,6 @@
 using namespace std;
 #include "Review.h"
 
-
-
 int getlenstring(const char *word){
     int len = 0;
     while (word[++len] != 0){}
@@ -11,7 +9,7 @@ int getlenstring(const char *word){
 }
 
 Review::Review(int s, char *d, char *u, char *m) {
-        cerr << "Review constructor initialized" << endl;
+        //cerr << "Review constructor initialized" << endl;
         if (s < 1) {
             stars = 1;
         }
@@ -39,7 +37,7 @@ Review::Review(int s, char *d, char *u, char *m) {
     }
 
 Review::Review() {
-        cerr << "Review default constructor initialized" << endl;
+        //cerr << "Review default constructor initialized" << endl;
         stars = -1; //NOTE: When implementing this on React, we should make it so that if a star rating is -1, it displays a special message to the effect of "NO REVIEW" or something.
         date = new char[8];
         date[0] = 'X';
@@ -64,7 +62,7 @@ Review::Review() {
     }
 
 Review::Review(const Review &input) {
-        cerr << "Review copy constructor initialized" << endl;
+        //cerr << "Review copy constructor initialized" << endl;
         int datelen = getlenstring(input.date);
         int userlen = getlenstring(input.username);
         int meallen = getlenstring(input.meal);
@@ -84,7 +82,7 @@ Review::Review(const Review &input) {
     }
 
 Review::~Review() {
-        cerr << "Review destructor initialzied" << endl;
+        //cerr << "Review destructor initialzied" << endl;
         delete [] date;
         delete [] username;
         delete [] meal;

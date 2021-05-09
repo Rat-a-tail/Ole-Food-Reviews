@@ -14,6 +14,12 @@ public:
     Review();
     Review(const Review &input);
     ~Review();
+    int get_stars();
+    char *get_date();
+    char *get_username();
+    char *get_meal();
+    void set_stars(int s);
+    void set_date(char *d);
     void set_username(char *u);
     void set_meal(char *m);
     void test_display();
