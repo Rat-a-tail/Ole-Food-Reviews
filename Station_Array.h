@@ -4,12 +4,13 @@
 #include <string>
 #include <string.h>
 using namespace std;
+#include "Meal_Array.h"
 
 class station{
     Meal* meal_array;
     int num_meals;
     static const int  default_num_meals = 10;
-    public:
+public:
     station();
     station( Meal* M, int n_m);
     void add_meal(Meal &d);

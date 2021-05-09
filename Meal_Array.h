@@ -3,12 +3,14 @@
 #include<iostream>
 #include <string>
 #include <string.h>
+
 using namespace std;
+
 
 class Meal{
     char *name; 
     int rating;
-    public:
+public:
     Meal();
     Meal(const char *n, int r);
     char *getname();
@@ -17,3 +19,4 @@ class Meal{
     Meal &operator= (const Meal &food);
    ~Meal() ;
 };
+#endif 

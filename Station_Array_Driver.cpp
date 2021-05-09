@@ -3,6 +3,7 @@ using namespace std;
 #include <string>
 #include <string.h>
 #include "Station_Array.h"
+#include "Meal_Array.h"
 
 int main() {
     station Soup;
@@ -42,7 +43,6 @@ int main() {
     array_of_stations[2] = &Tortilla;
     array_of_stations[3] = &Pizza;
     array_of_stations[4] = &Pasta;
-
 
     Soup.retrieve_information(num_stations, array_of_stations); 
     Home.retrieve_information(num_stations, array_of_stations); 

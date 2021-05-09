@@ -4,6 +4,7 @@
 #include <string.h>
 using namespace std;
 
+
 Meal::Meal(){
        rating = 0;
        name = new char[1];
