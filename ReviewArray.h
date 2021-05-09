@@ -10,12 +10,12 @@ class Review_Array {
     Review *review_array;
 
 public:
-    Review_Array(int l) : length(l);
+    Review_Array(int l);
     Review_Array();
     ~Review_Array();
-    Review &operator[](int i);
+    Review & operator[] (int i);
     void edit_entry(int i, Review newdata);
-    //void add_entry(Review latest);
+    void add_entry(Review latest);
     void delete_entry(int i) ;
     void test_display();
 };

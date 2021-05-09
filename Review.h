@@ -3,19 +3,21 @@
 #include<iostream>
 using namespace std;
 
+int getlenstring(const char *word);
+
 class Review {
     int stars;
     char *date;
-    char *username;
-    char *meal;
 
 public:
-    Review(int s, char *d, char *u, char *m);
+    Review(int s, char *d);
     Review();
     Review(const Review &input);
     ~Review();
-    void set_username(char *u);
-    void set_meal(char *m);
+    int get_stars();
+    char *get_date();
+    void set_stars(int s);
+    void set_date(char *d);
     void test_display();
 };
 
