@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "ReviewArray.h"
-#include "Review.cpp"
+#include "Review.h"
 
 Review_Array::Review_Array(int l) {
         //cerr << "Review_Array constructor initialized" << endl;
@@ -33,8 +33,6 @@ void Review_Array::add_entry(Review latest) {
 void Review_Array::edit_entry(int i, Review newdata) {
         review_array[i].set_stars(newdata.get_stars());
         review_array[i].set_date(newdata.get_date());
-        review_array[i].set_username(newdata.get_username());
-        review_array[i].set_meal(newdata.get_meal());
     }
 void Review_Array::delete_entry(int i) {
         //deletes the entry at the corresponding index, deallocates the old array and copies the contents into a new array that's one index shorter, so the index of every entry after the entry that was deleted is decreased by one

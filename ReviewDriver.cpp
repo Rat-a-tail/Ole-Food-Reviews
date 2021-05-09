@@ -3,17 +3,20 @@ using namespace std;
 #include "ReviewArray.h"
 
 int main() {
-    Review newreview(3, "12/12/12", "martin52", "pizza");
-    Review newreview2(2, "2/2/2", "tululu2", "tofu");
-    Review newreview3(newreview2);
-    newreview3.set_stars(1);
-    newreview3.set_date("4/4/04");
-    newreview3.set_username("bernard12");
-    newreview3.set_food("beans");
-    Review_Array test(4);
-    test[2].test_display();
-    test.edit_entry(2, newreview);
-    test[2].test_display();
-    test.add_entry(newreview2);
-    test[2].test_display();
+    Review newreview(3, "12/12/12");
+    Review newreview2(2, "2/2/2");
+    Review newreview3(5, "7/4/15");
+    Review_Array driver_test(10);
+    cerr << "An uninitialized review_array:" << endl;
+    driver_test.test_display();
+    cerr << "Editing entries:" << endl;
+    driver_test.edit_entry(0, newreview);
+    driver_test.edit_entry(5, newreview2);
+    driver_test.test_display();
+    cerr << "Adding entries to the end of the array:" << endl;
+    driver_test.add_entry(newreview3);
+    driver_test.test_display();
+    cerr << "Deleting entries:" << endl;
+    driver_test.delete_entry(5);
+    driver_test.test_display();
 }

@@ -16,14 +16,8 @@ UserArray.o:	UserArray.cpp	UserArray.h
 UserArrayDriver.o:	UserArrayDriver.cpp	UserArray.h
 	g++ -g -Wall -c UserArrayDriver.cpp
 
-Meal_Array.o:  Meal_Array.cpp Meal_Array.h 
-	g++ -g -Wall -c Meal_Array.cpp
-
-Meal_Array_Driver.o:  Meal_Array_Driver.cpp Meal_Array.h 
-	g++ -g -Wall -c Meal_Array_Driver.cpp
-
-Meal_Array_Driver:  Meal_Array.o Meal_Array_Driver.o 
-	g++ -g -Wall -o Meal_Array_Driver Meal_Array.o Meal_Array_Driver.o ../react.o -lcurl
+ReviewDriver:	ReviewArray.o	ReviewDriver.o
+	g++ -g -Wall -o ReviewDriver ReviewArray.o ReviewArrayDriver.o ../react.o -lcurl
 
 ReviewArray.o:	ReviewArray.cpp	ReviewArray.h
 	g++ -g -Wall -c ReviewArray.cpp
@@ -31,20 +25,21 @@ ReviewArray.o:	ReviewArray.cpp	ReviewArray.h
 ReviewDriver.o:	ReviewArray.cpp	ReviewArray.h
 	g++ -g -Wall -c Review.cpp
 
-ReviewDriver:	ReviewArray.o	ReviewDriver.o
-	g++ -g -Wall -o ReviewDriver ReviewArray.o ReviewDriver.o ../react.o -lcurl
-
 Review.o:	Review.cpp	Review.h
 	g++ -g -Wall -c Review.cpp
+
+Station_Array_Driver:  Station_Array.o Station_Array_Driver.o  Meal_Array.o
+	g++ -g -Wall -o Station_Array_Driver Station_Array.o Station_Array_Driver.o ../react.o -lcurl
 
 Station_Array.o:  Station_Array.cpp Station_Array.h 
 	g++ -g -Wall -c Station_Array.cpp
 
-Station_Array_Driver.o:  Station_Array_Driver.cpp Station_Array.h 
+Station_Array_Driver.o:  Station_Array.cpp Station_Array.h 
 	g++ -g -Wall -c Station_Array_Driver.cpp
 
-Station_Array_Driver:  Station_Array.o Station_Array_Driver.o 
-	g++ -g -Wall -o Station_Array_Driver Station_Array.o Station_Array_Driver.o ../react.o -lcurl
+Meal_Array.o:  Meal_Array.cpp Meal_Array.h 
+	g++ -g -Wall -c Meal_Array.cpp
+
 
 
 
