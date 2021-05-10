@@ -19,8 +19,8 @@ public:
     User &operator=(const User &cp); //=operator
     int getlen(const char *word); //length of strings
    // void adduserReview(Review &r);
-    void changepass(const char *npass); //change the password
-    void changeuser(const char *nuser); //change the username (not sure if we really need this one)
+    void changepass(char *npass); //change the password
+    void changeuser(char *nuser); //change the username (not sure if we really need this one)
     void display(); //display Username and password;
     char *getuser();
     char *getpass();

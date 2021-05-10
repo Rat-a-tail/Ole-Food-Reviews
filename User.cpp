@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 #include "User.h"
 
 
@@ -83,40 +85,27 @@ int User::getlen(const char *word){
         return len+1;
     }
 
-    /*
-void User::adduserReview(Review &r){
-        int getlen(user)srlst = getlenarray(userreviews);
-        char **templst = new User*[getlen(user)srlst];
-        for (int i = 0; i < getlen(user)srlst, i++){
-            templst[i]= userreviews[i];
-        }
-        delete [] userreviews;
-        userreviews = new User*[getlen(user)srlst+=1];
-        for (int i = 0, i < getlen(user)serlst, i++){
-            userreviews[i] = templst[i];
-        }
-        delete [] templst;
-        userreviews[i] = r;
-    }
-    */
 
-void User::changepass(const char *npass){
+void User::changepass(char *npass){
         delete [] password;
         int len = getlen(npass);
-        for(int i = 0; i < len; len++){
+        password = new char[len];
+        for(int i = 0; i < len; i++){
             password[i] = npass[i];
         }
 
     }
 
-void User::changeuser(const char *nuser){
+void User::changeuser(char *nuser){
         delete [] username;
         int len = getlen(nuser);
-        for(int i = 0; i < len; len++){
+        username = new char[len];
+        for(int i = 0; i < len; i++){
             username[i] = nuser[i];
         }
 
     }
+
 char *User::getuser(){
     return username;
 }
