@@ -7,8 +7,8 @@ User.o:	User.cpp	User.h
 UserDriver.o:	UserDriver.cpp	User.h
 	g++ -g -Wall -c UserDriver.cpp
 
-UserArrayDriver:	UserArray.o	UserArrayDriver.o
-	g++ -g -Wall -o UserArrayDriver UserArray.o UserArrayDriver.o ../react.o -lcurl
+UserArrayDriver:	UserArray.o	UserArrayDriver.o User.o
+	g++ -g -Wall -o UserArrayDriver UserArray.o UserArrayDriver.o User.o ../react.o -lcurl
 
 UserArray.o:	UserArray.cpp	UserArray.h
 	g++ -g -Wall -c UserArray.cpp
