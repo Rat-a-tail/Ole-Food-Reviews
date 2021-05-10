@@ -1,4 +1,6 @@
 #include<iostream>
+#include "Review.h"
+#include "../react.h"
 using namespace std;
 
 int getlenstring(const char *word);

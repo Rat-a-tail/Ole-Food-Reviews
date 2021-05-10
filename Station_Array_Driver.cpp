@@ -82,19 +82,10 @@ int main() {
 
     put_stationarray_in_global_mem(0, array_of_stations, 5); 
 
-   /* _global_mem = new char[10000];
-    int j = 0;
-    for (int i = 0; i < 10000; ++i) {
-        if (j == 99) {
-            _global_mem[i] = '\n';
-            j = 0;
-        } else {
-            _global_mem[i] = '~';
-            j++;
-        }
-    }*/
+    /*std::ifstream x("test.txt");
+    Meal z(x);
+    z.display();*/
 
- 
 }
 
 

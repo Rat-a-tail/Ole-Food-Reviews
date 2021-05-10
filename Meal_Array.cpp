@@ -67,48 +67,16 @@ int Meal::put_in_global_mem(int name_offset) {
         return num_bytes;
 }
 
-/*_global_mem = new char[10000];
-    int j = 0;
-    for (int i = 0; i < 10000; ++i) {
-        _global_mem[i] = '~';
-        }
-    }
-*/
 
-/*void Meal::put_in_global_mem(int num_offset, int name_offset) {
-    int p = getnum_meals();
-    _put_int(num_offset, p);
-    num_offset +=4;
-    
-    string q = name->getname();
-    for(int i = 0; i < p; ++i){
-        _put_raw(name_offset+4, q.c_str());
-        _put_int(name_offset);
-        name_offset += q.length() +1;
-         name_offset +=20;
-    }    
-}*/ 
-
-void Meal::print_to_file(const char *filename) const{
-    ofstream outfile(filename);
-    outfile << p << endl;
-    if(p>0){ // p == num_meals;
-        for(int i =0; i < p; ++i){
-            outfile << *name[i] << endl;
-            cout << "i got here " << endl;
-        }
-    }
-    outfile.close();
-}
- Meal::Meal(std::istream &is): Meal(){
-     int ss = getnum_meals();
-     is >> ss;
-     for (int i =0; i < ss; ++i){
-        string str;
-        string d = str->getname();
-        is >> d;
+/*Meal::Meal(std::istream &is): Meal(){
+     string q = name;
+    int len = q.length();
+     is >> len;
+     for (int i =0; i < len; ++i){
+        is >> q[i];
      }
- }
+     cout << q << endl;
+ }*/
 
 
  // pass to it a default value;
