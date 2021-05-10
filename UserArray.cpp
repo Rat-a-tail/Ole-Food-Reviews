@@ -15,6 +15,26 @@ UserArrayP::~UserArrayP(){
         delete [] userlist;
     }
 
+UserArrayP::UserArrayP(std::istream &is){
+    is >> userlstlen;
+	userlist = new User*[Default_size];
+	for (int k = 0; k < userlstlen; k++){
+        char user[20];
+        char pass[20];
+		is >> k;
+		is >> user;
+        is >> k;
+        is >> pass;
+
+        userlist[k] = new User;
+        User &copy = *(userlist[k]);
+        copy.changeuser(user);
+        copy.changepass(pass);
+        //copy.display();
+    }
+}
+
+
 void UserArrayP::addUser(const User &h){
         User *copy = new User;
 		*copy = h;
@@ -25,7 +45,7 @@ void UserArrayP::addUser(const User &h){
 int UserArrayP::getlenarray(const char *word){
         int len = 0;
         while (word[++len]){}
-        return len;
+        return len+=1;
     }
 
 void UserArrayP::display(){
@@ -49,6 +69,7 @@ bool UserArrayP::checking(const char *user, const char *pass){
     int foundvalue;
     bool found = 0;
 
+    //Username check
     while ( i < userlstlen && found == 0){
         bool check = 1;
         int k = 0;
@@ -57,7 +78,7 @@ bool UserArrayP::checking(const char *user, const char *pass){
             char *userfl = userlist[i]->getuser();
             //cout <<"k: " << user[k] << "==" <<userfl[k] <<endl;
             if (user[k] != userfl[k]){
-                cout <<k <<": " << user[k] << "==" <<userfl[k] <<endl;
+                //cout <<k <<": " << user[k] << "==" <<userfl[k] <<endl;
                 check = 0;
             }
             else if (k == getlenarray(user)-1 && check == 1){
@@ -74,6 +95,7 @@ bool UserArrayP::checking(const char *user, const char *pass){
 
     }
 
+    //Password Match
     bool match = 1;
     char *passfl = userlist[foundvalue]->getpass();
     int c = 0;
@@ -163,15 +185,19 @@ void UserArrayP::get_from_global(int offset){
         
 	}
 }
-/*
-}
+
 
 void UserArrayP::print_to_file(const char *filename) const{
 	ofstream f(filename);
 	f<< userlstlen <<endl;
 	for (int i = 0; i < userlstlen; ++i){
-		f<< i << " " << *User[i]->display() << endl;
+        char *user = new char[20];
+        char *pass = new char[20];
+        user = userlist[i]->getuser();
+        pass = userlist[i]->getpass();
+		f<< i << " " << user << endl;
+        f<< i << " " << pass << endl;
 	}
 	f.close();
 }
-*/
+

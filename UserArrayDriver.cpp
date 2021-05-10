@@ -21,7 +21,8 @@ int main(){
     cout << "get_from" << endl;
     sto.get_from_global(5);
     */
-    UserArrayP sto;
+    std::ifstream f("Userinfo.txt");
+    UserArrayP sto(f);
     //sto.get_from_global(5);
     //sto.display();
     char answer1;
@@ -56,5 +57,6 @@ int main(){
             }
         }
     }
+    sto.print_to_file("Userinfo.txt");
 
 }

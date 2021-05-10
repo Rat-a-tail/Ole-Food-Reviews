@@ -1,6 +1,7 @@
 #include <iostream>
 #include "User.h"
 #include "../react.h"
+#include <fstream>
 
 class UserArrayP{
     int userlstlen;
@@ -9,6 +10,7 @@ class UserArrayP{
 
 public: 
     UserArrayP();
+    UserArrayP(std::istream &is);
     ~UserArrayP();
 
 
