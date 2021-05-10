@@ -4,12 +4,13 @@ using namespace std;
 #include <string.h>
 #include "Station_Array.h"
 #include "Meal_Array.cpp"
+#include<fstream>
 
 int main() {
     Meal* arr;
     arr = new Meal[20]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
      // might need a method(add) to do the thing above.--> station.
-
+    
     //Soup station
     Meal a("Pea Soup" , 2);
     Meal b("Jar Jar Binks California Meldley", 4);
@@ -78,7 +79,27 @@ int main() {
     Tortilla.retrieve_information(num_stations, array_of_stations); 
     Pizza.retrieve_information(num_stations, array_of_stations); 
     Pasta.retrieve_information(num_stations, array_of_stations); 
+
+    put_stationarray_in_global_mem(0, array_of_stations, 5); 
+
+   /* _global_mem = new char[10000];
+    int j = 0;
+    for (int i = 0; i < 10000; ++i) {
+        if (j == 99) {
+            _global_mem[i] = '\n';
+            j = 0;
+        } else {
+            _global_mem[i] = '~';
+            j++;
+        }
+    }*/
+
+ 
 }
+
+
+
+
 
 
 
