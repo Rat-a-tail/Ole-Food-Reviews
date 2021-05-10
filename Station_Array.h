@@ -24,7 +24,9 @@ public:
     void retrieve_information(int n_s,station **arr1);
     ~station();
     int put_in_global_mem(int station_offset);
+    //void print_to_file(const char *filename);
 };
 int put_stationarray_in_global_mem(int offset_for_stations, station **array_of_stations, int num_stations);
+
 #endif 
 
