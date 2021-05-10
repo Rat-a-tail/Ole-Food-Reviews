@@ -40,7 +40,6 @@ void station::add_meal(Meal &d){
         }
     }
 
-
 void station::display(){
         for(int i =0; i < num_meals; ++i){
              meal_array[i].display();
@@ -84,7 +83,8 @@ void station::retrieve_information(int n_s,station **arr1){ // pass in informati
         std::getline (std::cin,output);  
         if(output == "end"){ // use strcmp in context with nothing else....
             break;
-        }else { // array of pointer to stations... 
+        }
+        else{ // array of pointer to stations... 
             int i;
             for( i = 0; i < n_s; ++i) {  // station number 
                 int k;
@@ -94,14 +94,13 @@ void station::retrieve_information(int n_s,station **arr1){ // pass in informati
                         int rating_of_meal = (arr1[i]->getmeal_rating(k));
                         cout << "You selected: "<< name_of_meal << " with a meal rating of " <<  rating_of_meal << endl;
                         break;
-                    }
-                 
+                    } 
                 } 
-            } 
-                     
-            if (i == n_s){
+            }        
+            if (i == n_s){ 
              cout << "Sorry, the meal rating cannot be found" << endl;
-            } 
+             break;
+            }
         } 
     }
 }
@@ -132,4 +131,20 @@ int put_stationarray_in_global_mem(int offset_for_stations, station **array_of_s
     }
     return curr_offset - offset_for_stations; 
 }
+
+/*void station::print_to_file(const char *filename){
+    ofstream outfile(filename);
+
+    outfile << num_meals << endl;
+    if(num_meals > 0){ // p == num_meals;
+        string q =  getmeal_name(num_meals);  
+        int len = q.length();
+        for(int i =0; i < len; ++i){
+            outfile << q[i] << endl;
+            cout << q<< endl;
+            cout << "i got here " << endl;
+        }
+    }
+    outfile.close();
+}*/
 
