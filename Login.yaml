@@ -10,7 +10,7 @@
             text-align: center
             fontSize: 50
             color: gold
-          index: 25
+          index: 20
 
 - View:
     style:
@@ -62,4 +62,11 @@
             backgroundColor: gray
           on_touch:
             backgroundColor: rgb(0, 255, 255)
-			
+        children:
+          - Text:
+              style:
+                text-align: center
+                fontSize: 30
+                color: black
+              index: 10
+
