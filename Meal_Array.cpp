@@ -2,6 +2,7 @@
 #include "Meal_Array.h"
 #include <string>
 #include <string.h>
+#include <fstream>
 using namespace std;
 
 
@@ -68,16 +69,13 @@ int Meal::put_in_global_mem(int name_offset) {
 }
 
 
-/*Meal::Meal(std::istream &is): Meal(){
-     string q = name;
-    int len = q.length();
-     is >> len;
-     for (int i =0; i < len; ++i){
-        is >> q[i];
-     }
-     cout << q << endl;
- }*/
 
+void Meal::print_to_file_meal(const char *filename){
+    ofstream f(filename);
+    f << "Here is your information as requested" << endl;
+    f << name << "  with " << rating<< endl;   
+    f.close();
+}
 
  // pass to it a default value;
 
