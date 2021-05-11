@@ -35,7 +35,7 @@
 - View:
     style:
       width: 100%
-      height: 20%
+      height: 60%
       backgroundColor: gold
     children:
       - Text:
@@ -51,15 +51,15 @@
             color: black
           index: 100
           len: 100
-- Button:
-    id: enter
-    style:
-      marginLeft: 47%
-      marginTop: 50
-      width: 100
-      height: 50
-      borderRadius: 25
-      backgroundColor: gray
-    on_touch:
-      backgroundColor: rgb(0, 255, 255)
-
+      - Button:
+          id: enter
+          style:
+            marginLeft: 47%
+            marginTop: 50
+            width: 100
+            height: 50
+            borderRadius: 25
+            backgroundColor: gray
+          on_touch:
+            backgroundColor: rgb(0, 255, 255)
+			
