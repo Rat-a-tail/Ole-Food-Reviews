@@ -25,7 +25,7 @@ ReviewArray.o:	ReviewArray.cpp	ReviewArray.h
 ReviewDriver.o:	ReviewArray.cpp	ReviewArray.h
 	g++ -g -Wall -c Review.cpp
 
-Review.o:	Review.cpp	Review.h
+Review.o:	Review.cpp	Review.h  
 	g++ -g -Wall -c Review.cpp
 
 Station_Array_Driver:  Station_Array.o Station_Array_Driver.o  Meal_Array.o
