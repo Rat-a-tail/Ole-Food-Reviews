@@ -4,6 +4,7 @@
 #include <string>
 #include <string.h>
 #include"../react.h"
+//#include "Review.cpp"
 #include<fstream>
 using namespace std;
 
@@ -21,9 +22,11 @@ public:
     Meal &operator= (const Meal &food);
    ~Meal() ;
    int put_in_global_mem(int name_offset);
-   //Meal(std::istream &is);
+   void print_to_file_meal(const char *filename);
+   
     /*void put_in_global_mem(int num_offset, int name_offset);
     void print_to_file(const char *filename) const;
     Meal(std::istream &is);*/
 };
+
 #endif 

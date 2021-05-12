@@ -78,7 +78,6 @@ bool station::compare(int j, string output, station **arr2, int q){
 
 void station::retrieve_information(int n_s,station **arr1){ // pass in information here  input and num of station
     bool done = 0;
-
     while(!done){ 
         string input = "What meal rating are you looking for ?: "; 
         string output;  
@@ -96,11 +95,13 @@ void station::retrieve_information(int n_s,station **arr1){ // pass in informati
                 int k;
                 for(k =0; k < arr1[i]->getnum_meals(); k++){ // meal number // revist this
                     if (compare(i, output, arr1, k)){  // int j, string output, station **arr2, int q
+
                         char *name_of_meal = (arr1[i]->getmeal_name(k));
                         int rating_of_meal = (arr1[i]->getmeal_rating(k));
+                        arr1[i]->getmeal_array(k).print_to_file_meal("Meal2.txt");
                         cout << "You selected: "<< name_of_meal << " with a meal rating of " <<  rating_of_meal << endl;
-                        found_Meal = 1;
-                        //print_to_file("Meal.txt", arr1, n_s);
+                        found_Meal = 1; 
+                        print_to_file("Station.txt", arr1,n_s); 
                         break;
                     } // perhaps call print_to_file function here
 
