@@ -19,6 +19,8 @@ public:
     char *get_date();
     void set_stars(int s);
     void set_date(char *d);
+    //void global_mem_tests();
+    void to_global_mem(int reviews_start);
     void test_display();
 };
 

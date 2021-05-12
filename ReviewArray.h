@@ -1,7 +1,7 @@
 #ifndef _ReviewArray_A_
 #define _ReviewArray_A_
-#include "Review.h"
 #include "../react.h"
+#include "Review.h"
 #include<iostream>
 using namespace std;
 
@@ -16,7 +16,8 @@ public:
     Review & operator[] (int i);
     void edit_entry(int i, Review newdata);
     void add_entry(Review latest);
-    void delete_entry(int i) ;
+    void delete_entry(int i);
+    void to_global_mem(int reviews_start);
     void test_display();
 };
 

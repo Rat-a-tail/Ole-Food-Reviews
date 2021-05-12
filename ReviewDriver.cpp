@@ -19,4 +19,6 @@ int main() {
     cerr << "Deleting entries:" << endl;
     driver_test.delete_entry(5);
     driver_test.test_display();
+    cerr << "Committing an entire array to _global_mem:" << endl;
+    driver_test.to_global_mem(500);
 }

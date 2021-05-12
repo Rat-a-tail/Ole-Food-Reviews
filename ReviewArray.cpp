@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 #include "ReviewArray.h"
-#include "Review.h"
 
 Review_Array::Review_Array(int l) {
         //cerr << "Review_Array constructor initialized" << endl;
@@ -39,6 +38,14 @@ void Review_Array::delete_entry(int i) {
         Review blank;
         edit_entry(i, blank);
     }
+
+void Review_Array::to_global_mem(int reviews_start) {
+    int offset = reviews_start;
+    for (int i = 0; i < length; ++i) {
+        review_array[i].to_global_mem(offset);
+        offset += 12;
+    }
+}
 
 void Review_Array::test_display() {
         //displays the entire contents of the array
