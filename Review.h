@@ -8,6 +8,7 @@ int getlenstring(const char *word);
 class Review {
     int stars;
     char *date;
+    
 
 public:
     Review(int s, char *d);

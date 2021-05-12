@@ -16,16 +16,16 @@ UserArray.o:	UserArray.cpp	UserArray.h
 UserArrayDriver.o:	UserArrayDriver.cpp	UserArray.h
 	g++ -g -Wall -c UserArrayDriver.cpp
 
-ReviewDriver:	ReviewArray.o	ReviewDriver.o
-	g++ -g -Wall -o ReviewDriver ReviewArray.o ReviewArrayDriver.o ../react.o -lcurl
+ReviewDriver:	ReviewArray.o	ReviewDriver.o  Review.o
+	g++ -g -Wall -o ReviewDriver ReviewDriver.o ReviewArray.o Review.o ../react.o -lcurl
 
 ReviewArray.o:	ReviewArray.cpp	ReviewArray.h
 	g++ -g -Wall -c ReviewArray.cpp
 
-ReviewDriver.o:	ReviewArray.cpp	ReviewArray.h
-	g++ -g -Wall -c Review.cpp
+ReviewDriver.o:	Review.h	ReviewArray.h   ReviewDriver.cpp
+	g++ -g -Wall -c ReviewDriver.cpp
 
-Review.o:	Review.cpp	Review.h  
+Review.o:	Review.cpp	Review.h
 	g++ -g -Wall -c Review.cpp
 
 Station_Array_Driver:  Station_Array.o Station_Array_Driver.o  Meal_Array.o
