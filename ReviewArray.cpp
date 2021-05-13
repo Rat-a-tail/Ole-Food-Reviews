@@ -24,6 +24,10 @@ int Review_Array::return_stars(int i) {
     return review_array[i].get_stars();
 }
 
+char * Review_Array::return_date(int i) {
+    return review_array[i].get_date();
+}
+
 void Review_Array::add_entry(Review latest) {
         int i = length;
         while (review_array[i - 1].get_stars() == -1) {

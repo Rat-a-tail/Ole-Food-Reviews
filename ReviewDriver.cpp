@@ -21,6 +21,8 @@ int main() {
     driver_test.test_display();
     cerr << "Committing an entire array to _global_mem:" << endl;
     driver_test.to_global_mem(500);
-    cerr << "Printing member data of one review:" << endl;
+    cerr << "Printing stars of one review:" << endl;
     cerr << driver_test.return_stars(4) << endl;
+    cerr << "Printing date of one review" << endl;
+    cerr << driver_test.return_date(4) << endl;
 }
