@@ -48,12 +48,13 @@ void Review_Array::delete_entry(int i) {
         edit_entry(i, blank);
     }
 
-void Review_Array::to_global_mem(int reviews_start) {
+int Review_Array::to_global_mem(int reviews_start) {
     int offset = reviews_start;
     for (int i = 0; i < length; ++i) {
         review_array[i].to_global_mem(offset);
         offset += 12;
     }
+    return offset;
 }
 
 void Review_Array::test_display() {

@@ -19,7 +19,7 @@ public:
     void edit_entry(int i, Review newdata);
     void add_entry(Review latest);
     void delete_entry(int i);
-    void to_global_mem(int reviews_start);
+    int to_global_mem(int reviews_start);
     void test_display();
 };
 
