@@ -4,26 +4,9 @@ using namespace std;
 
 
 int main(){
-    /*
-    outgoing_mem_size = 30000;
-    UserArrayP sto;
-    User celia("celia", "purple");
-    User pol("poll", "magenta");
-    User maker;
-    sto.addUser(maker);
-    sto.addUser(celia);
-    sto.addUser(pol);
-    //sto.display();
-    //cout <<sto.checking("celia", "purple") << endl;
-    cout << "store :" << endl;
-    //sto.store_global(5);
-    sto.clear();
-    cout << "get_from" << endl;
-    sto.get_from_global(5);
-    */
     std::ifstream f("Userinfo.txt");
     UserArrayP sto(f);
-    //sto.get_from_global(5);
+    sto.store_global(5);
     //sto.display();
     char answer1;
     char user[20];
