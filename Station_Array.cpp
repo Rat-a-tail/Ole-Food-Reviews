@@ -4,7 +4,6 @@
 #include <string.h>
 using namespace std;
 #include <fstream>
-#include "Meal_Array.h"
 #include "ReviewArray.h"
 #include"../react.h"
 
@@ -216,3 +215,5 @@ int put_stationarray_in_global_mem(int offset_for_stations, station **array_of_s
 		filename << "Guru99";
 		filename.close();
 	}*/
+
+//archive should print whatver is in txt file name and reviews...
