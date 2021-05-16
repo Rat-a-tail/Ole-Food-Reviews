@@ -37,7 +37,7 @@ Station_Array.o:  Station_Array.cpp Station_Array.h
 Station_Array_Driver.o:  Station_Array_Driver.cpp Station_Array.h 
 	g++ -g -Wall -c Station_Array_Driver.cpp
 
-Meal_Array.o:  Meal_Array.cpp Meal_Array.h 
+Meal_Array.o:	Meal_Array.cpp Meal_Array.h
 	g++ -g -Wall -c Meal_Array.cpp
 
 a.out:	Login.o	User.o UserArray.o Meal_Array.o Station_Array.o

@@ -26,13 +26,12 @@ int Review_Array::return_stars(int i) {
     return review_array[i].get_stars();
 }
 
-<<<<<<< HEAD
 int Review_Array::get_length(){
     return length;
-=======
+}
+
 char * Review_Array::return_date(int i) {
     return review_array[i].get_date();
->>>>>>> a418374001bc1399640e3a0b1ad13e02d11c5f9a
 }
 
 void Review_Array::add_entry(Review latest) {
