@@ -4,7 +4,6 @@
 #include <string.h>
 using namespace std;
 #include <fstream>
-#include "Meal_Array.h"
 #include"../react.h"
 
 // station class
