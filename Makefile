@@ -25,16 +25,16 @@ ReviewArray.o:	ReviewArray.cpp	ReviewArray.h
 ReviewDriver.o:	Review.h	ReviewArray.h   ReviewDriver.cpp
 	g++ -g -Wall -c ReviewDriver.cpp
 
-Review.o:	Review.cpp	Review.h
+Review.o:	Review.cpp	Review.h 
 	g++ -g -Wall -c Review.cpp
 
-Station_Array_Driver:  Station_Array.o Station_Array_Driver.o  Meal_Array.o
-	g++ -g -Wall -o Station_Array_Driver Station_Array.o Station_Array_Driver.o ../react.o -lcurl
+Station_Array_Driver:  Station_Array.o Station_Array_Driver.o  Meal_Array.o ReviewArray.o Review.o
+	g++ -g -Wall -o Station_Array_Driver Station_Array.o Meal_Array.o ReviewArray.o  Review.o Station_Array_Driver.o ../react.o -lcurl
 
 Station_Array.o:  Station_Array.cpp Station_Array.h 
 	g++ -g -Wall -c Station_Array.cpp
 
-Station_Array_Driver.o:  Station_Array.cpp Station_Array.h 
+Station_Array_Driver.o:  Station_Array_Driver.cpp Station_Array.h 
 	g++ -g -Wall -c Station_Array_Driver.cpp
 
 Meal_Array.o:  Meal_Array.cpp Meal_Array.h 

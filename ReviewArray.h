@@ -6,7 +6,7 @@
 using namespace std;
 
 class Review_Array {
-    int length;
+    int length; 
     Review *review_array;
 
 public:
@@ -14,11 +14,13 @@ public:
     Review_Array();
     ~Review_Array();
     Review & operator[] (int i);
+    int return_stars(int i);
     void edit_entry(int i, Review newdata);
     void add_entry(Review latest);
     void delete_entry(int i);
     void to_global_mem(int reviews_start);
     void test_display();
+    int get_length();
 };
 
 #endif // _ReviewArray_A

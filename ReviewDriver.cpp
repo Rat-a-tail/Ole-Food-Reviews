@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #include "ReviewArray.h"
+#include "Review.h"
 
 int main() {
     Review newreview(3, "12/12/12");

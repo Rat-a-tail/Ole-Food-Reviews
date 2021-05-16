@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
 #include "ReviewArray.h"
+#include "Review.h" // aded this bit
 
 Review_Array::Review_Array(int l) {
         //cerr << "Review_Array constructor initialized" << endl;
         length = l;
         review_array = new Review[length];
         }
+        
 Review_Array::Review_Array() {
         //cerr << "Review_Array default constructor initialized" << endl;
         length = 0;
@@ -19,6 +21,14 @@ Review_Array::~Review_Array() {
 Review & Review_Array::operator[](int i) {
         return review_array[i];
     }
+
+int Review_Array::return_stars(int i) {
+    return review_array[i].get_stars();
+}
+
+int Review_Array::get_length(){
+    return length;
+}
 
 void Review_Array::add_entry(Review latest) {
         int i = length;
