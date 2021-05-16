@@ -6,6 +6,7 @@
 using namespace std;
 #include <fstream>
 #include "Meal_Array.h"
+#include "ReviewArray.h"
 
 class station{
     Meal* meal_array;
