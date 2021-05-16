@@ -5,7 +5,12 @@ using namespace std;
 #include "Station_Array.h"
 #include "ReviewArray.h"
 #include <fstream>
+<<<<<<< HEAD
 
+=======
+//#include "Meal_Array.cpp"
+#include<fstream>
+>>>>>>> db156e33b6d99c8a41cab0e426c72f14e985d4f9
 
 int main() {
     Meal* arr;
