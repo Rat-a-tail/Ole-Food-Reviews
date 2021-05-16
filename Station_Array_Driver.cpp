@@ -3,37 +3,45 @@ using namespace std;
 #include <string>
 #include <string.h>
 #include "Station_Array.h"
+#include "ReviewArray.h"
 #include <fstream>
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+//#include "Meal_Array.cpp"
+=======
+>>>>>>> 100824168b15d85d7f4da8d9296feff9d40671a8
 #include<fstream>
+>>>>>>> db156e33b6d99c8a41cab0e426c72f14e985d4f9
 
 int main() {
     Meal* arr;
     arr = new Meal[20]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
      // might need a method(add) to do the thing above.--> station.
-    
     //Soup station
-    Meal a("Pea Soup" , 2);
-    Meal b("Jar Jar Binks California Meldley", 4);
+    Meal a("Pea Soup");
+    Meal b("Jar Jar Binks California Meldley");
     //Home station
-    Meal c("Tautaun (Beef) Red Wine Braised Pot Roast", 5);
-    Meal d(" Carbonite Roasted Spicy Potatoes", 0.2);
-    Meal e ("Jakku Noodles", 2);
+    Meal c("Tautaun (Beef) Red Wine Braised Pot Roast");
+    Meal d(" Carbonite Roasted Spicy Potatoes");
+    Meal e ("Jakku Noodles");
     // Tortilla station
-    Meal f("Sofrito Pinto Beans",3);
-    Meal g("Chipotle Black Beans",3);
-    Meal h("Achiote chicken Pinto Tinga",0);
-    Meal i("Arroz Amarillo",1);
+    Meal f("Sofrito Pinto Beans");
+    Meal g("Chipotle Black Beans");
+    Meal h("Achiote chicken Pinto Tinga");
+    Meal i("Arroz Amarillo");
 
     //Pizza station
-    Meal j("Wampa Sausage and Swiss Chard Pizza",3);
-    Meal k("Rancor Pepperoni Pizza with Hastings Dairy", 5);
-    Meal l("Pizza",0);
+    Meal j("Wampa Sausage and Swiss Chard Pizza");
+    Meal k("Rancor Pepperoni Pizza with Hastings Dairy");
+    Meal l("Pizza");
     // Pasta station
-    Meal m("Roasted Chicken",0);
-    Meal n("Pasta",2);
-    Meal o("Roasted Local Vegetables",4);
-    Meal p("Sauce Marinara",1);
-    Meal q("Garlic Peppercorn Sauce",2);
+    Meal m("Roasted Chicken");
+    Meal n("Pasta");
+    Meal o("Roasted Local Vegetables");
+    Meal p("Sauce Marinara");
+    Meal q("Garlic Peppercorn Sauce");
     //delete [] arr;
 
     station Soup;
@@ -87,6 +95,8 @@ int main() {
 
     put_stationarray_in_global_mem(0, array_of_stations, 5); 
     a.print_to_file_meal("Meal2.txt");
+
+    
     //print_to_file("Meal.txt",array_of_stations, 5);
      
     

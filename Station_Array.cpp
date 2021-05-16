@@ -40,7 +40,7 @@ void station::add_meal(Meal &d){
         }
     }
 
-void station::display(){
+void station::display(){ 
         for(int i =0; i < num_meals; ++i){
              meal_array[i].display();
         }
@@ -55,10 +55,13 @@ char *station::getmeal_name(int y){ // k value
 }
 
 int station::getmeal_rating(int p){
-    int tmp = getmeal_array(p).getrating();
+    
+       //rating.return_stars(p)
+    return meal_array[p].getReview(p); // returns a number.
+    //int tmp = getmeal_array(p);      //edit_entry(int p, Review data);
     //cout << tmp << endl;
-    return tmp; 
 }
+
 // get name fo meal function; returns strings, call get meal array
 int station::getnum_meals(){
     return num_meals;
@@ -81,7 +84,8 @@ void station::retrieve_information(int n_s,station **arr1){ // pass in informati
         string input = "What meal rating are you looking for ?: "; 
         string output;  
         cout << input << endl;
-        std::getline (std::cin,output); 
+        std::getline (std::cin,output);
+        //output = "Pasta" ;
         //cin >>  output;  
         if(!output.std::string::compare("end")){ // use strcmp in context with nothing else....
             done =1;
@@ -90,20 +94,23 @@ void station::retrieve_information(int n_s,station **arr1){ // pass in informati
         else{ // array of pointer to stations... 
         bool found_Meal = 0;
             int i; 
+             
             for( i = 0; i < n_s; ++i) {  // station number 
                 int k;
                 for(k =0; k < arr1[i]->getnum_meals(); k++){ // meal number // revist this
                     if (compare(i, output, arr1, k)){  // int j, string output, station **arr2, int q
 
-                        char *name_of_meal = (arr1[i]->getmeal_name(k));
-                        int rating_of_meal = (arr1[i]->getmeal_rating(k));
-                        arr1[i]->getmeal_array(k).print_to_file_meal("Meal2.txt");
-                        cout << "You selected: "<< name_of_meal << " with a meal rating of " <<  rating_of_meal << endl;
+                        char *name_of_meal = (arr1[i]->getmeal_name(k));  
+        
+                        int rating_of_meal = (arr1[i]->getmeal_rating(k)); // look at this line
+                        //cout << "here " << endl;
+                        arr1[i]->getmeal_array(k).print_to_file_meal("Meal2.txt"); // meant to get acess to meal and print to file //getmeal_rating(int p)
+                        cout << "You selected: "<< name_of_meal << " with a meal rating of " << rating_of_meal << endl;
+            
                         found_Meal = 1; 
                         print_to_file("Station.txt", arr1,n_s); 
                         break;
                     } // perhaps call print_to_file function here
-
                 } 
             }        
             if (!found_Meal){ 
@@ -111,6 +118,7 @@ void station::retrieve_information(int n_s,station **arr1){ // pass in informati
              break;
             }
         } 
+        break; // need to get out at some point;
     }
 }
 
@@ -120,8 +128,8 @@ void print_to_file(const char *filename, station **array_of_stations, int num_st
         for (int i =0; i < num_stationss; ++i){ // need to iterate through stations and meal array
             for(int k = 0; k < i; ++k){
                 string n = array_of_stations[i]->getmeal_name(k);
-                int r = (array_of_stations[i]->getmeal_rating(k));
-                f << n << " " << r << endl;
+                //int r = (array_of_stations[i]->getmeal_rating(k));
+                f << n << " "  << endl;
             }
         }
     f.close();
@@ -136,7 +144,8 @@ int station::put_in_global_mem(int station_offset){
             int num_bytes_meal = meal_array[i].put_in_global_mem(current_offset); 
             // think about its contents 
             current_offset += num_bytes_meal; // keep strack where each station starts
-        }
+            // test that things in global mem can be got out again;...little by little...
+        }  
         return current_offset - station_offset; 
 }
 
@@ -162,20 +171,20 @@ int put_stationarray_in_global_mem(int offset_for_stations, station **array_of_s
         int nm_bytes_stations = array_of_stations[i]->put_in_global_mem(curr_offset);
         curr_offset += nm_bytes_stations; // keeping track from one station to the next.
     }
-    return curr_offset - offset_for_stations; 
+    return curr_offset - offset_for_stations; // returns the last place where the station was placed.
 }
 
 
-station::station(std::ofstream &is){  
+/*station::station(std::ofstream &is){  
      //station_index = 0;
 //cout << "i got here " << endl;
 // std::ofstream x ("test.txt"); // read*/ 
 
 /*char* n = "hello";
     is  >> n;
-        */
+        
 
- }
+ }*/
 
 
 /*void read_to_file()*/
@@ -205,3 +214,5 @@ station::station(std::ofstream &is){
 		filename << "Guru99";
 		filename.close();
 	}*/
+
+//archive should print whatver is in txt file name and reviews...
