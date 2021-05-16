@@ -30,8 +30,9 @@ UserArrayP::UserArrayP(std::istream &is){
         User &copy = *(userlist[k]);
         copy.changeuser(user);
         copy.changepass(pass);
-        //copy.display();
+        copy.display();
     }
+    cerr << "from file" <<endl;
 }
 
 
@@ -49,10 +50,10 @@ int UserArrayP::getlenarray(const char *word){
     }
 
 void UserArrayP::display(){
-    cout<<"userlstlen: "<< userlstlen <<endl;
+    cerr<<"userlstlen: "<< userlstlen <<endl;
     for (int i = 0; i < userlstlen; i++){
        
-        std::cout << "\tEntry: " << i<<std::endl; 
+        std::cerr << "\tEntry: " << i<<std::endl; 
         userlist[i]->display();
     }
 }
@@ -73,12 +74,12 @@ bool UserArrayP::checking(const char *user, const char *pass){
     while ( i < userlstlen && found == 0){
         bool check = 1;
         int k = 0;
-        //cout << "user length: "<< getlenarray(user) <<endl;
+        //   cerr << "user length: "<< getlenarray(user) <<endl;
         while (check != 0 && k < getlenarray(user)){
             char *userfl = userlist[i]->getuser();
-            //cout <<"k: " << user[k] << "==" <<userfl[k] <<endl;
+            //cerr <<"k: " << user[k] << "==" <<userfl[k] <<endl;
             if (user[k] != userfl[k]){
-                //cout <<k <<": " << user[k] << "==" <<userfl[k] <<endl;
+                //   cerr <<k <<": " << user[k] << "==" <<userfl[k] <<endl;
                 check = 0;
             }
             else if (k == getlenarray(user)-1 && check == 1){
@@ -87,7 +88,7 @@ bool UserArrayP::checking(const char *user, const char *pass){
             }
             k++;
         }
-        //cout << "check = " << check << " found = " << found<< endl;
+        //   cerr << "check = " << check << " found = " << found<< endl;
         i++;
     }
     if (found == 0){
@@ -124,12 +125,13 @@ void UserArrayP::store_global(int offset){
     _put_short(5, userlstlen);
     for (int i = 0; i < userlstlen; i++) {
         char *useru = userlist[i]->getuser();
-        cout << useru <<endl;
+        //cerr << useru <<endl;
         char *passu = userlist[i]->getpass();
-        cout <<passu <<endl;
-        _put_raw(100+100*i, useru);
-        _put_raw((150+100*i), passu);
+        //cerr <<passu <<endl;
+        _put_raw((100+100*i)+offset, useru);
+        _put_raw((150+100*i)+offset, passu);
     }
+    cerr << "store global" <<endl;
 }
 
 void UserArrayP::clear(){
@@ -141,27 +143,26 @@ void UserArrayP::clear(){
 
 void UserArrayP::get_from_global(int offset){
     clear();
-	userlstlen = _get_short(5);
-    cout << "userlstlen :" <<userlstlen <<endl;
+	userlstlen = _get_short(offset + 5);
+    cerr << "userlstlen :" <<userlstlen <<endl;
 	for(int i = 0; i < userlstlen; i++){
-        int k= 100+100*i;
+        int k= offset+100+100*i;
         int ulen = 0;
         
-        cout <<endl;
+        cerr <<endl;
 
         while (_get_char(k) != 0){ ulen++; k++;}
         char *user = new char[ulen+=1];
 
 
-        int z = 100+100*i;
-    //    *user = _get_char(z);
+        int z = offset +100+100*i;
         for (int r = 0; r < ulen; r++){
             user[r] = _get_char(z);
-            //cout <<  "char"<<r<<": " <<_get_char(z) <<  user <<endl;
+            //   cerr <<  "char"<<r<<": " <<_get_char(z) <<  user <<endl;
             z++;
         }
     
-        cout << "user :" <<  user <<endl;
+        cerr << "user :" <<  user <<endl;
 
         k = 150+100*i;
         int plen = 0;
@@ -175,7 +176,7 @@ void UserArrayP::get_from_global(int offset){
             pass[r] = _get_char(z);
             z++;
         }
-        cout << "pass :" <<  pass <<endl;
+        cerr << "pass :" <<  pass <<endl;
         
         userlist[i] = new User;
         User &copy = *(userlist[i]);

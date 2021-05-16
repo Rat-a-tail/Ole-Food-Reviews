@@ -15,10 +15,14 @@ public:
     ~Review_Array();
     Review & operator[] (int i);
     int return_stars(int i);
+<<<<<<< HEAD
+=======
+    char * return_date(int i);
+>>>>>>> a418374001bc1399640e3a0b1ad13e02d11c5f9a
     void edit_entry(int i, Review newdata);
     void add_entry(Review latest);
     void delete_entry(int i);
-    void to_global_mem(int reviews_start);
+    int to_global_mem(int reviews_start);
     void test_display();
     int get_length();
 };

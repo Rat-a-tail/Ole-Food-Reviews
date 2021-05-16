@@ -20,6 +20,10 @@ int main() {
     cerr << "Deleting entries:" << endl;
     driver_test.delete_entry(5);
     driver_test.test_display();
-    cerr << "Committing an entire array to _global_mem:" << endl;
-    driver_test.to_global_mem(500);
+    cerr << "Committing an entire array to _global_mem and returning the final index:" << endl;
+    cerr << driver_test.to_global_mem(500) << endl;
+    cerr << "Printing stars of one review:" << endl;
+    cerr << driver_test.return_stars(4) << endl;
+    cerr << "Printing date of one review" << endl;
+    cerr << driver_test.return_date(4) << endl;
 }
