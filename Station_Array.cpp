@@ -4,10 +4,6 @@
 #include <string.h>
 using namespace std;
 #include <fstream>
-<<<<<<< HEAD
-
-=======
->>>>>>> db156e33b6d99c8a41cab0e426c72f14e985d4f9
 #include"../react.h"
 
 // station class
