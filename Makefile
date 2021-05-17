@@ -41,7 +41,7 @@ Meal_Array.o:	Meal_Array.cpp Meal_Array.h
 	g++ -g -Wall -c Meal_Array.cpp
 
 a.out:	Login.o	User.o UserArray.o Meal_Array.o Station_Array.o
-	g++ -g -Wall -o a.out Login.o User.o UserArray.o Meal_Array.o Station_Array.o ../react.o -lcurl
+	g++ -g -Wall -o a.out Login.o User.o UserArray.o ../react.o -lcurl
 
 Login.o: Login.cpp UserArray.h User.h Meal_Array.h Station_Array.h
 	g++ -g -Wall -c Login.cpp

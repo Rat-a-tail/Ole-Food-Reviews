@@ -1,16 +1,16 @@
 #include"../react.h"
 #include "UserArray.h"
 #include "User.h"
-#include "ReviewArray.h"
-#include "Meal_Array.h"
-#include "Station_Array.h"
+//#include "ReviewArray.h"
+//#include "Meal_Array.h"
+//#include "Station_Array.h"
 
 
 int main() {
   _init();
   std::ifstream f("Userinfo.txt");
   UserArrayP sto(f);
-  
+  /*
       Meal* arr;
     arr = new Meal[20]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
      // might need a method(add) to do the thing above.--> station.
@@ -91,11 +91,11 @@ int main() {
     put_stationarray_in_global_mem(0, array_of_stations, 5);
     a.print_to_file_meal(&quot;Meal2.txt&quot;);
 
-  
+  */
   if (_just_starting()) {
-    cerr << "just_starting" <<endl;
-    add_yaml("archive.yaml");
-    cerr <<"after add_yaml" <<endl;
+    //cerr << "just_starting" <<endl;
+    add_yaml("welcome.yaml");
+    //cerr <<"after add_yaml" <<endl;
     _put_raw(20, "Ole Food Reviews");
     _put_raw(0, "Username:");  // null bye appended automatically
     _put_raw(10, "Password:");
@@ -113,21 +113,21 @@ int main() {
     _put_raw(230, "");
     _put_raw(250, "");
     _put_raw(270, "");
-    cerr <<"after put raw statement" <<endl;
+    //cerr <<"after put raw statement" <<endl;
   }
   if (_received_event()) {
-    cerr <<"received_event" <<endl;
+    //cerr <<"received_event" <<endl;
     if (_event_id_is("login")){
       add_yaml("Login.yaml");
     }
     else if (_event_id_is("submit")) {
-      cerr<< "submit" <<endl;
+      //cerr<< "submit" <<endl;
       char *s = &(_global_mem[230]);
       char *q = &(_global_mem[250]);
     	bool a = sto.checking(s, q);
 	
       if (a){
-	      cerr << "correct" <<endl;
+	      //cerr << "correct" <<endl;
         add_yaml("mainpage.yaml");
       }
       
