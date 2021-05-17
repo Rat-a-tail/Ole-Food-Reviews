@@ -14,28 +14,29 @@ int main() {
     arr = new Meal[20]; // default contructor called here, first built the stations empty then fill themw ith the meal information:
      // might need a method(add) to do the thing above.--> station.
     //Soup station
-    Meal a("Pea Soup");
-    Meal b("Jar Jar Binks California Meldley");
+    Review_Array Arr;
+    Meal a("Pea Soup", Arr); 
+    Meal b("Jar Jar Binks California Meldley", Arr);
     //Home station
-    Meal c("Tautaun (Beef) Red Wine Braised Pot Roast");
-    Meal d(" Carbonite Roasted Spicy Potatoes");
-    Meal e ("Jakku Noodles");
+    Meal c("Tautaun (Beef) Red Wine Braised Pot Roast", Arr);
+    Meal d(" Carbonite Roasted Spicy Potatoes", Arr );
+    Meal e ("Jakku Noodles", Arr);
     // Tortilla station
-    Meal f("Sofrito Pinto Beans");
-    Meal g("Chipotle Black Beans");
-    Meal h("Achiote chicken Pinto Tinga");
-    Meal i("Arroz Amarillo");
+    Meal f("Sofrito Pinto Beans", Arr);
+    Meal g("Chipotle Black Beans", Arr);
+    Meal h("Achiote chicken Pinto Tinga", Arr);
+    Meal i("Arroz Amarillo", Arr);
 
     //Pizza station
-    Meal j("Wampa Sausage and Swiss Chard Pizza");
-    Meal k("Rancor Pepperoni Pizza with Hastings Dairy");
-    Meal l("Pizza");
+    Meal j("Wampa Sausage and Swiss Chard Pizza", Arr);
+    Meal k("Rancor Pepperoni Pizza with Hastings Dairy", Arr);
+    Meal l("Pizza",Arr);
     // Pasta station
-    Meal m("Roasted Chicken");
-    Meal n("Pasta");
-    Meal o("Roasted Local Vegetables");
-    Meal p("Sauce Marinara");
-    Meal q("Garlic Peppercorn Sauce");
+    Meal m("Roasted Chicken", Arr);
+    Meal n("Pasta", Arr);
+    Meal o("Roasted Local Vegetables", Arr);
+    Meal p("Sauce Marinara", Arr);
+    Meal q("Garlic Peppercorn Sauce", Arr);
     //delete [] arr;
 
     station Soup;

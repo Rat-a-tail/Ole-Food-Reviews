@@ -22,6 +22,8 @@ public:
     //void global_mem_tests();
     void to_global_mem(int reviews_start);
     void test_display();
+    Review operator=(const Review &q);
+
 };
 
 #endif // _Review_A

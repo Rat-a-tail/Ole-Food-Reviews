@@ -22,6 +22,7 @@ public:
     int to_global_mem(int reviews_start);
     void test_display();
     int get_length();
+    Review_Array (const Review_Array &review);
 };
 
 #endif // _ReviewArray_A

@@ -56,8 +56,11 @@ Review::~Review() {
         //cerr << "Review destructor initialzied" << endl;
         delete [] date;
     }
+Review::Review operator=(const Review &q){
+    le                                 // 
+}
 
-int Review::get_stars() {return stars;}
+int Review::get_stars() {return stars;}   
 char *Review::get_date() {return date;}
 
 void Review::set_stars(int s) {stars = s;}

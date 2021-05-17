@@ -14,6 +14,18 @@ Review_Array::Review_Array() {
         length = 0;
         review_array = new Review[length];
     }
+
+Review_Array::Review_Array(const Review_Array &review){ // copy constructor  
+    length = review.length;
+
+    review_array = new Review[length];
+    for (int i = 0; i < length; ++i ) {
+        review_array[i] = review[i]; // Review(const Review &input); // using copy constructor for reviews
+        // review coppy construor... strings -- don't coppy constructors...
+
+    }
+}
+
 Review_Array::~Review_Array() {
         //cerr << "Review_Array destructor initialized" << endl;
         delete [] review_array;
