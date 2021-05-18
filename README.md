@@ -8,3 +8,4 @@ Ole Food Reviews
 	call make a.out
 -non implemented but coded files
 	
+file:///C:/Users/olson/Downloads/Copy%20of%20Ole%20Food%20Review%20Manual.pdf
