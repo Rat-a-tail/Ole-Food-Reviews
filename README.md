@@ -9,3 +9,5 @@ Ole Food Reviews
 -non implemented but coded files
 	
 file:///C:/Users/olson/Downloads/Copy%20of%20Ole%20Food%20Review%20Manual.pdf
+file:///C:/Users/olson/Downloads/Ole%20Food%20Reviews%20Planning%20(1).pdf
+
